@@ -5,15 +5,21 @@ import java.util.Set;
 
 public class Test {
     public static void main(String[] args) {
-        for (long g = 1; g <= 5; g++) {
-            Set<Long> result = new HashSet<Long>();
-            for (long j = 0; j <= 4; j++) {
-                long pow = g * j;
-                result.add(pow % 6);
-            }
-            System.out.print(g + ": " + result);
-            if (result.size() == 5) {
-                System.out.print(" yes");
+        for (int p = 1; p <= 1000; p++) {
+//        int p=12;
+            System.out.print(p + ": ");
+            for (int g = 2; g <= p - 1; g++) {
+                Set<Long> result = new HashSet<Long>();
+                for (int j = 0; j <= p - 2; j++) {
+                    long pow = (long) Math.pow(g, j);
+                    result.add(pow % p);
+                }
+//            System.out.print(g + ": " + result);
+                if (result.size() == p - 1) {
+//                System.out.print(" yes");
+                    System.out.print(g + ",");
+                }
+//            System.out.println();
             }
             System.out.println();
         }
