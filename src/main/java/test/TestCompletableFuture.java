@@ -28,5 +28,6 @@ public class TestCompletableFuture {
         System.out.println("exec main");
         System.out.println(completableFuture.join());
         System.out.println("main finish");
+
     }
 }
