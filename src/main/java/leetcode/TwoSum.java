@@ -17,9 +17,9 @@ public class TwoSum {
             map.put(input1[i], i);
         }
         for (int i = 0; i < input1.length; i++) {
-            int find = target1 - input1[i];
-            if (map.containsKey(find)) {
+            if (map.containsKey(target1 - input1[i])) {
                 System.out.println(i);
+                System.currentTimeMillis();
             }
         }
     }
