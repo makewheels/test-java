@@ -6,6 +6,26 @@ import java.util.List;
 
 public class ThreeSum {
 
+    private boolean isSame(List<Integer> a1, List<Integer> a2) {
+        for (Integer each : a1) {
+            if (!a2.contains(each)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void distinct(List<List<Integer>> array) {
+        for (int i = 0; i < array.size(); i++) {
+            for (int j = 0; j < array.size(); j++) {
+                if (isSame(array.get(i), array.get(j))) {
+                    array.remove(array.get(i));
+                    return;
+                }
+            }
+        }
+    }
+
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         int n = nums.length;
@@ -18,6 +38,7 @@ public class ThreeSum {
                 }
             }
         }
+        distinct(result);
         return result;
     }
 
