@@ -3,7 +3,7 @@ package test;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Test {
+public class TestNumber {
     public static void main(String[] args) {
         for (int p = 1; p <= 1000; p++) {
 //        int p=12;
