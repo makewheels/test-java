@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.math.BigInteger;
-
 public class T2 {
     class ListNode {
         int val;
@@ -17,25 +15,14 @@ public class T2 {
         }
     }
 
-    private BigInteger getNumber(ListNode head) {
-        ListNode each = head;
-        StringBuilder stringBuilder = new StringBuilder();
-        while (each != null) {
-            each = each.next;
-            stringBuilder.append(each.val);
-        }
-        return new BigInteger(stringBuilder.reverse().toString());
-    }
-
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        BigInteger n1 = getNumber(l1);
-        BigInteger n2 = getNumber(l2);
-        BigInteger add = n1.add(n2);
-        
+
     }
 
     public static void main(String[] args) {
-
+        T2.ListNode n3 = new T2.ListNode(3);
+        T2.ListNode n2 = new T2.ListNode(2, n3);
+        T2.ListNode n1 = new T2.ListNode(1, n2);
         System.out.println(new T2().addTwoNumbers());
     }
 }
