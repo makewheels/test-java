@@ -31,6 +31,10 @@ public class T2 {
         ListNode temp = head;
         boolean jinwei = false;
         do {
+            if (jinwei && l1 == null && l2 == null) {
+                temp.next = new ListNode(1);
+                break;
+            }
             int add = l1.val + l2.val;
             if (jinwei) {
                 add++;
@@ -46,7 +50,10 @@ public class T2 {
             temp = newNode;
             l1 = l1.next;
             l2 = l2.next;
-        } while (l1 != null && l2 != null);
+        } while (
+                (l1 != null && l2 != null)
+                        || (jinwei && l1 == null && l2 == null)
+        );
         if (l1 != null) {
             temp.next = l1;
         } else if (l2 != null) {
